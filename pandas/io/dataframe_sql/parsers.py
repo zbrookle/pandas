@@ -463,7 +463,9 @@ class InternalTransformer(TransformerBaseClass):
             if isinstance(when_expression, Tuple):  # type: ignore
                 new_column[when_expression[0]] = when_expression[1]
             else:
-                new_column[new_column == False] = get_wrapper_value(when_expression)  # noqa
+                new_column[new_column == False] = get_wrapper_value(
+                    when_expression
+                )  # noqa
         return Expression(value=new_column)
 
     def rank_form(self, form):

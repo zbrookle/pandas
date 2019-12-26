@@ -18,6 +18,4 @@ class DataFrameDoesNotExist(Exception):
     """
 
     def __init__(self, table_name):
-        Exception.__init__(
-            self, f"DataFrame {table_name} has not been defined"
-        )
+        Exception.__init__(self, f"DataFrame {table_name} has not been defined")
